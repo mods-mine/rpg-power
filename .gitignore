@@ -1,0 +1,5 @@
+# build output (attach to releases instead)
+*.jar
+# local publishing notes
+PUBLICAR.md
+MODERATION.md

@@ -1,0 +1,75 @@
+modLoader="lowcodefml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+  modId="rpg_power"
+  version="1.6.0"
+  displayName="RPG Power"
+  authors="Marcelo Ratton"
+  description='''Tome and armor affinity for the RPG Series: wearing the armor set of your equipped spell book grants bonuses, wearing other armor applies penalties. KubeLoader content pack.'''
+  # Server-side logic; installing it on the client only adds translated tome descriptions
+  displayTest="IGNORE_ALL_VERSION"
+
+[[dependencies.rpg_power]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1,1.22)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="kubejs"
+    type="required"
+    versionRange="[2101.7.2-build.374,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="kubeloader"
+    type="required"
+    versionRange="[21-0.1.0-Alpha-3,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="curios"
+    type="required"
+    versionRange="[9.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="spell_engine"
+    type="required"
+    versionRange="[1.10,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="spell_power"
+    type="required"
+    versionRange="[1.6,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="critical_strike"
+    type="optional"
+    versionRange="[1.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.rpg_power]]
+    modId="ranged_weapon_api"
+    type="optional"
+    versionRange="[3.0,)"
+    ordering="AFTER"
+    side="BOTH"

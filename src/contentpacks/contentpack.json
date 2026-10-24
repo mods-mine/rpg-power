@@ -1,0 +1,16 @@
+{
+  "id": "rpg_power",
+  "name": "RPG Power",
+  "description": "Tome and armor affinity for the RPG Series.",
+  "version": "1.6.0",
+  "authors": [
+    "Marcelo Ratton"
+  ],
+  "dependencies": [
+    { "type": "required", "source": "mod", "id": "curios", "reason": "spell book slot" },
+    { "type": "required", "source": "mod", "id": "spell_engine", "reason": "spell book container" },
+    { "type": "required", "source": "mod", "id": "spell_power", "reason": "spell school attributes" },
+    { "type": "optional", "source": "mod", "id": "critical_strike", "reason": "physical critical chance" },
+    { "type": "optional", "source": "mod", "id": "ranged_weapon_api", "reason": "ranged damage" }
+  ]
+}

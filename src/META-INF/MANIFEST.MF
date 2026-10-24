@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: RPG Power
+Implementation-Version: 1.6.0
+Implementation-Vendor: Marcelo Ratton
+
