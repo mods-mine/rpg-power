@@ -4,12 +4,12 @@ license="MIT"
 
 [[mods]]
   modId="rpg_power"
-  version="1.6.0"
+  version="1.7.3"
   displayName="RPG Power"
   authors="Marcelo Ratton"
   description='''Tome and armor affinity for the RPG Series: wearing the armor set of your equipped spell book grants bonuses, wearing other armor applies penalties. KubeLoader content pack.'''
-  # Server-side logic; installing it on the client only adds translated tome descriptions
-  displayTest="IGNORE_ALL_VERSION"
+  # Needed on both sides: the spell effects are registered by a startup script
+  displayTest="MATCH_VERSION"
 
 [[dependencies.rpg_power]]
     modId="minecraft"
@@ -28,7 +28,7 @@ license="MIT"
 [[dependencies.rpg_power]]
     modId="kubejs"
     type="required"
-    versionRange="[2101.7.2-build.374,)"
+    versionRange="[2101.7.2-build.368,2101.7.2-build.374)"
     ordering="AFTER"
     side="BOTH"
 

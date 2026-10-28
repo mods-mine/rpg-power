@@ -1,0 +1,51 @@
+{
+  "school": "spell_power:water",
+  "range": 16.0,
+  "tier": 1,
+  "group": "rpg_power_armor",
+  "learn": { "level_requirement_per_tier": 5, "level_cost_per_tier": 1 },
+  "active": {
+    "cast": {
+      "duration": 0.5,
+      "animation": { "id": "spell_engine:one_handed_area_charge" },
+      "sound": { "id": "spell_engine:generic_healing_casting", "randomness": 0.0 },
+      "particles": [
+        {
+          "id": "spell_engine:magic_spark",
+          "appearance": { "color": 4281306367, "motion": "FLOAT" },
+          "batch": { "count": 1.0, "shape": "PIPE", "anchor": "ENTITY", "vertical_origin": 0.1, "min_speed": 0.05, "max_speed": 0.1, "width_factor": 2.0 }
+        }
+      ]
+    }
+  },
+  "release": { "animation": { "id": "spell_engine:one_handed_area_release" } },
+  "target": { "type": "AIM", "aim": { "sticky": true, "use_caster_as_fallback": true } },
+  "impacts": [
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": { "effect_id": "rpg_power:arcane_armor", "duration": 10.0, "amplifier": 0, "show_particles": false }
+      },
+      "visuals": {
+        "particles": [
+          {
+            "id": "spell_engine:magic_spell",
+            "appearance": { "color": 4281306367, "motion": "DECELERATE" },
+            "batch": { "count": 40.0, "shape": "SPHERE", "anchor": "ENTITY", "min_speed": 0.2, "max_speed": 0.2 }
+          },
+          {
+            "id": "spell_engine:magic_spark",
+            "appearance": { "color": 4281306367, "motion": "ASCEND" },
+            "batch": { "count": 20.0, "shape": "PILLAR", "anchor": "ENTITY", "min_speed": 0.02, "max_speed": 0.15 }
+          }
+        ]
+      },
+      "sound": { "id": "spell_engine:generic_healing_impact_1" }
+    }
+  ],
+  "cost": {
+    "exhaust": 0.2,
+    "cooldown": { "duration": 30.0 },
+    "item": { "id": "mrpg_lib:aqua_stone" }
+  }
+}

@@ -47,6 +47,20 @@ A full matching set gives **+40% health and armor, +20% damage, +8% critical cha
 
 The values are refreshed every second and use fixed attribute modifier IDs, so they never stack.
 
+## Arcane Armor (native spell)
+
+Every caster tome (Wizard Arcane/Fire/Frost, Elemental Aqua/Terra/Wind, Priest, Paladin, Bard and Forcemaster) gets **Arcane Armor** as its first spell. It targets you or a friendly player, costs 1 rune of the tome's type (Bard and Forcemaster use an arcane rune). It lasts **10 s with a 30 s cooldown, +5 s and +15 s for each extra spell in the tome, up to 40 s and 120 s** (7 spells).
+
+The target takes **20% less damage, +10% for each extra spell in the caster's tome, up to 80%** (7 spells). The spell shows particles in the tome's main color and a shield icon on the target. The caster is the nearest player (within 32 blocks) with the spell in an equipped tome. The native spell is added when the tome is carried and does not use a spell slot. KubeLoader is required on the client too, because the effect is registered by a startup script.
+
+### Evasion (hunters)
+
+Hunter tomes (Archer, Deadeye, Tundra Hunter, War Archer and Rogue) get **Evasion** as their first spell instead. It only targets the caster and uses the same duration and cooldown as Arcane Armor (10 s / 30 s, up to 40 s / 120 s). Each hit has a **20% chance to be evaded, +10% for each extra spell in the tome, up to 80%**; an evaded hit still deals **50%** of its damage. Archer tomes spend 1 arrow and can cast it with any bow or crossbow, vanilla included; Rogue has no item cost.
+
+### Stun (melee fighters)
+
+Warrior, Berserker, Forcemaster and the Witcher tomes (not Rogue or Paladin) get **Stun** as their first spell instead. 0.5 s cast, 30 s cooldown, no item cost. Creatures around you cannot move, attack or use abilities: **3 blocks and 3 seconds, +1 block and +1 second for each extra spell in the tome, up to 8 blocks and 8 seconds**. Stunned creatures show a **Stunned** status effect (Jade lists it with the time left) and give off star particles. Players and bosses are not affected.
+
 ## Supported tomes
 
 | Tome | Armor sets | Damage bonus | Critical |
@@ -72,14 +86,14 @@ Netherite and loot variants of each set are included. Class mods that are not in
 ## Requirements
 
 - Minecraft **1.21.1**, **NeoForge**
-- [KubeJS](https://modrinth.com/mod/kubejs) (2101.7.2-build.374 or newer)
+- [KubeJS](https://modrinth.com/mod/kubejs) (2101.7.2-build.368 up to build.373; KubeLoader Alpha-3 does not work with build.374 or newer)
 - [KubeLoader](https://modrinth.com/mod/kubeloader) (21-0.1.0-Alpha-3 or newer)
 - [Curios API](https://modrinth.com/mod/curios)
 - [Spell Engine](https://modrinth.com/mod/spell-engine) and [Spell Power Attributes](https://modrinth.com/mod/spell-power)
 - Optional: [Critical Strike](https://modrinth.com/mod/critical-strike) (physical critical chance) and [Ranged Weapon API](https://modrinth.com/mod/ranged-weapon-api) (ranged damage)
 - At least one RPG Series class mod: [Wizards](https://modrinth.com/mod/wizards), [Paladins & Priests](https://modrinth.com/mod/paladins-and-priests), [Rogues & Warriors](https://modrinth.com/mod/rogues-and-warriors), [Archers](https://modrinth.com/mod/archers), [Archers Expansion](https://modrinth.com/mod/archers-expansion), [Elemental Wizards](https://modrinth.com/mod/elemental-wizards-rpg), [Berserker](https://modrinth.com/mod/berserker-rpg-class), [Forcemaster](https://modrinth.com/mod/forcemaster-rpg-class), [Bard](https://modrinth.com/mod/bard-more-rpg-classes), [Witcher](https://modrinth.com/mod/witcher-rpg-class)
 
-RPG Power runs on the **server**. In single player it runs on the integrated server; on a dedicated server, players do not need it installed (installing it on the client only translates the tome descriptions).
+RPG Power is needed on the **server and the client** (with KubeJS and KubeLoader): since 1.7.0 the spell effects are registered by a startup script, so players without it cannot join. The affinity logic itself runs on the server.
 
 ## Customizing
 
@@ -111,4 +125,4 @@ zip -X -r ../rpg_power-<version>.jar . -x META-INF/MANIFEST.MF
 
 Com um tomo no **slot de tomo do Curios**, cada peça do conjunto do tomo vale **+1**, cada peça de outro conjunto (outra classe, vanilla ou outros mods) vale **-1** e slot vazio vale 0. Por ponto (de -4 a +4): **±10%** de vida máxima e de armadura, **±5%** de dano da classe, **±2%** de chance de crítico e **±2%** de redução de dano. Tomos de conjuradores (mago, mago elemental, sacerdote, paladino, bardo e forcemaster) ganham também **+2% de poder mágico** por peça certa, sem penalidade pelas erradas; tomos de caçadores (arqueiros, ladino e berserker) ganham **+2% de velocidade de deslocamento** por peça certa, também sem penalidade; tomos de combate corpo a corpo (guerreiro, ladino, berserker, paladino, forcemaster e witcher) ganham **+0,5 bloco de alcance** por peça certa ao usar uma arma corpo a corpo da classe. Com uma arma da classe na mão principal, cada ponto também dá **±2%** de dano, **±3%** de velocidade (ataque, puxada ou conjuração) e **±4%** de velocidade do projétil; com o escudo da classe ou o Deflection (aparar) ativo, **±3%** de proteção. Sem tomo equipado, nada muda. Passe o mouse sobre o tomo para ver todos esses efeitos no jogo.
 
-Requisitos: Minecraft 1.21.1 NeoForge, KubeJS, KubeLoader, Curios API, Spell Engine e Spell Power Attributes (Critical Strike e Ranged Weapon API são opcionais). Roda só no servidor.
+Requisitos: Minecraft 1.21.1 NeoForge, KubeJS, KubeLoader, Curios API, Spell Engine e Spell Power Attributes (Critical Strike e Ranged Weapon API são opcionais). Precisa estar no servidor e no cliente.

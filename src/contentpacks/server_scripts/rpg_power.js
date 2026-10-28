@@ -269,8 +269,8 @@ function bookPool(stack) {
   try {
     return String(container.pool())
   } catch (e) {
-    const m = String(container).match(/pool=([a-z0-9_.-]+:[a-z0-9_./-]+)/)
-    return m ? m[1] : null
+    // No const/let inside try/catch: Rhino reports "redeclaration of var" on the next call
+    return (String(container).match(/pool=([a-z0-9_.-]+:[a-z0-9_./-]+)/) || [])[1] || null
   }
 }
 
